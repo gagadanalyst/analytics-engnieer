@@ -61,7 +61,7 @@ A user group is a collection of users and allows to easily apply permissions to 
 Below simple self explaining diagram can further clarify the use case for user groups.
 
 <figure style="display: block; margin-left: 10%;margin-right;width: 80%;">
-  <img src="/data-leader/blog/aws-iam/user_groups.png" alt="AWS IAM User Groups"  class="zoomable">
+  <img src="/analytics-engineer/blog/aws-iam/user_groups.png" alt="AWS IAM User Groups"  class="zoomable">
   <figcaption style="margin-left: 35%">AWS IAM User Groups.
       <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_groups.html">Source</a></figcaption>
 </figure>

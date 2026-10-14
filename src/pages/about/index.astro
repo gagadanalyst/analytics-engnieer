@@ -36,9 +36,9 @@ import PageLayout from "@/layouts/CommonPage.astro";
 </PageLayout>
 
 <script type="module" lang="js">
-  import * as pdfjsLib from "/data-leader/scripts/pdf.mjs";
+  import * as pdfjsLib from "/analytics-engineer/scripts/pdf.mjs";
   pdfjsLib.GlobalWorkerOptions.workerSrc =
-    "/data-leader/scripts/pdf.worker.mjs";
+    "/analytics-engineer/scripts/pdf.worker.mjs";
 
   var pdfDoc = null;
   var pageNum;
@@ -116,6 +116,6 @@ import PageLayout from "@/layouts/CommonPage.astro";
     renderPage(pageNum, newScale);
   }
 
-  const pdfUrl = "/data-leader/Gaga.pdf";
+  const pdfUrl = "/analytics-engineer/Gaga.pdf";
   renderPDF(pdfUrl);
 </script>

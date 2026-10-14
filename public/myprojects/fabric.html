@@ -14717,7 +14717,7 @@ The goals of this project are as follows:
 </br>
 Unfortunately, Epec Spot website does not offer a free API to get the data, so I will use <b>BeautifulSoup4</b> to scrape this data.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='/data-leader/myprojects/projects/images/fabric_project/epexspot.png' stlye='display: block; margin: 0 auto' alt="Epex Spot"  width="700" height="600" >
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='/analytics-engineer/myprojects/projects/images/fabric_project/epexspot.png' stlye='display: block; margin: 0 auto' alt="Epex Spot"  width="700" height="600" >
 </br>
 2. Store it in <b>Delta Tables</b> locally
 
@@ -14748,7 +14748,7 @@ Unfortunately, Epec Spot website does not offer a free API to get the data, so I
 <p><a id='arch'></a></p>
 <h1 id="Architecture">Architecture<a class="anchor-link" href="#Architecture">&#182;</a></h1><hr>
 <p>If it were the project in <strong>Microsoft Fabric</strong>, then below was the Architecture I planned</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='/data-leader/myprojects/projects/images/fabric_project/architecture-1.png' stlye='display: block; margin: 0 auto' alt="Micrsoft Fabric Project Architecture"  width="700" height="600" ></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='/analytics-engineer/myprojects/projects/images/fabric_project/architecture-1.png' stlye='display: block; margin: 0 auto' alt="Micrsoft Fabric Project Architecture"  width="700" height="600" ></p>
 <p><a href="#0">Back to Top</a></p>
 
 </div>
@@ -14790,7 +14790,7 @@ Unfortunately, Epec Spot website does not offer a free API to get the data, so I
 </a>
 </br>
 The steps can be seen in the image below
-</div><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='/data-leader/myprojects/projects/images/fabric_project/install_lib_python_fabric.png' stlye='display: block; margin: 0 auto' alt="Micrsoft Fabric Install Python Library"  width="700" height="600" ></p>
+</div><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='/analytics-engineer/myprojects/projects/images/fabric_project/install_lib_python_fabric.png' stlye='display: block; margin: 0 auto' alt="Micrsoft Fabric Install Python Library"  width="700" height="600" ></p>
 <h3 id="2.-PySpark-Installation">2. PySpark Installation<a class="anchor-link" href="#2.-PySpark-Installation">&#182;</a></h3><hr>
 <h5 id="Local-Environment">Local Environment<a class="anchor-link" href="#Local-Environment">&#182;</a></h5><div class="alert alert-block alert-info" style="color:black">
  Please follow steps from my other project on PySpark Installation
@@ -14818,7 +14818,7 @@ I would have created a new <b>Notebook</b> and followed Fabric's prompts to also
 
 </br>
 Above steps can be seen in Image below
-</div><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='/data-leader/myprojects/projects/images/fabric_project/notebook_fabric.png' stlye='display: block; margin: 0 auto' alt="Micrsoft Fabric New Notebook"  width="700" height="600" ></p>
+</div><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='/analytics-engineer/myprojects/projects/images/fabric_project/notebook_fabric.png' stlye='display: block; margin: 0 auto' alt="Micrsoft Fabric New Notebook"  width="700" height="600" ></p>
 <h3 id="3.-Web-Scraping-Code">3. Web Scraping Code<a class="anchor-link" href="#3.-Web-Scraping-Code">&#182;</a></h3><hr>
 <h5 id="Local-Environment">Local Environment<a class="anchor-link" href="#Local-Environment">&#182;</a></h5><hr>
 <div class="alert alert-block alert-info" style="color:black">
@@ -14835,7 +14835,7 @@ The code in the next Cell i
     <li>I also make sure the next run, the data is appended to the same table, since I wish to <b>schedule</b> in <b>Airflow</b>  for daily data extraction.</li>
     <li>The resulting data with <b>market paritioning</b> would look like below</li>
 </ol>
-</div><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='/data-leader/myprojects/projects/images/fabric_project/scraping_result.png' stlye='display: block; margin: 0 auto' alt="Local Delta Table with Market Paritioning"  width="300" height="400" ></p>
+</div><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='/analytics-engineer/myprojects/projects/images/fabric_project/scraping_result.png' stlye='display: block; margin: 0 auto' alt="Local Delta Table with Market Paritioning"  width="300" height="400" ></p>
 <h5 id="Fabric">Fabric<a class="anchor-link" href="#Fabric">&#182;</a></h5><hr>
 <div class="alert alert-block alert-info" style="color:black">
 I would have created a function that received <b>market</b> as a parameter and scraped data for that <b>market</b> from <b>Epex Spot</b> Website. Basically modifiying the code as explained above. The result would have been saved in <b>Delta Table</b> in the <b>Lakehouse</b>.
@@ -15185,7 +15185,7 @@ I created a dbt project named <code>eur_enegry_prices</code>
     <li>I would use DBT locally in both local and Fabric environment to creaate data tranformations. I would have also used <b>DataFlow Gen2</b>, but Since I don't have access to Fabric I would prefer DBT.</li>
     <li>Setup dbt, get the SQL endpoint from Fabric. Locally, since I would use DuckDB I set up my dbt profile as below
 </br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='/data-leader/myprojects/projects/images/fabric_project/dbt_profile.png' stlye='display: block; margin: 0 auto' alt="Local DBT profile"  width="250" height="300" >
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='/analytics-engineer/myprojects/projects/images/fabric_project/dbt_profile.png' stlye='display: block; margin: 0 auto' alt="Local DBT profile"  width="250" height="300" >
 </li>
     <li>Check all tranformations I build in my github repo for this project,
     <a href="https://github.com/gsinghmath" style="color:blue; text-decoration:underline">here</a>
@@ -15194,9 +15194,9 @@ I created a dbt project named <code>eur_enegry_prices</code>
     <li>Here are the screenshots of the <b>lineage and the macros and models</b> I built taken from dbt docs website</li>
 
 </ol>
-</div><p><img src='/data-leader/myprojects/projects/images/fabric_project/dbt_project.png' stlye='display: block; margin: 0 auto' alt="Local DBT project"  width="800" height="600"><br>
-<img src='/data-leader/myprojects/projects/images/fabric_project/dbt_database.png' stlye='display: block; margin: 0 auto' alt="Local DBT database"  width="800" height="600" ><br>
-<img src='/data-leader/myprojects/projects/images/fabric_project/dbt_lineage.png' stlye='display: block; margin: 0 auto' alt="Local DBT lineage"  width="800" height="600" ></p>
+</div><p><img src='/analytics-engineer/myprojects/projects/images/fabric_project/dbt_project.png' stlye='display: block; margin: 0 auto' alt="Local DBT project"  width="800" height="600"><br>
+<img src='/analytics-engineer/myprojects/projects/images/fabric_project/dbt_database.png' stlye='display: block; margin: 0 auto' alt="Local DBT database"  width="800" height="600" ><br>
+<img src='/analytics-engineer/myprojects/projects/images/fabric_project/dbt_lineage.png' stlye='display: block; margin: 0 auto' alt="Local DBT lineage"  width="800" height="600" ></p>
 <p><a href="#0">Back to Top</a></p>
 
 </div>
@@ -15222,19 +15222,19 @@ I built four reports showing various stats
 <ol>
     <li><b>Average Prices:</b> showing average <b>Monthly</b> and <b>Daily</b> prices across Countries and Markets.
         </br>
-        <img src='/data-leader/myprojects/projects/images/fabric_project/pbi_avp_prices.png' stlye='display: block; margin: 0 auto' alt="Power BI Avg Prices"  width="800" height="600" >
+        <img src='/analytics-engineer/myprojects/projects/images/fabric_project/pbi_avp_prices.png' stlye='display: block; margin: 0 auto' alt="Power BI Avg Prices"  width="800" height="600" >
     </li>
     <li><b>Price Points and Suggestions Market:</b> Price Stats and Daily suggestions for a chosen market every hour based on price
         </br>
-        <img src='/data-leader/myprojects/projects/images/fabric_project/pbi_suggestion.png' stlye='display: block; margin: 0 auto' alt="Power BI Suggestion"  width="800" height="600" >
+        <img src='/analytics-engineer/myprojects/projects/images/fabric_project/pbi_suggestion.png' stlye='display: block; margin: 0 auto' alt="Power BI Suggestion"  width="800" height="600" >
     </li>
     <li><b>Daily Price Comparison across Markets:</b> Price Comparison across markets for last 7 days
         </br>
-        <img src='/data-leader/myprojects/projects/images/fabric_project/pbi_7days.png' stlye='display: block; margin: 0 auto' alt="Power BI 7 days"  width="800" height="600" >
+        <img src='/analytics-engineer/myprojects/projects/images/fabric_project/pbi_7days.png' stlye='display: block; margin: 0 auto' alt="Power BI 7 days"  width="800" height="600" >
     </li>
     <li><b>Price Range Markets:</b> Shows the min vs max price for a chosen market
         </br>
-        <img src='/data-leader/myprojects/projects/images/fabric_project/pbi_price_range.png' stlye='display: block; margin: 0 auto' alt="Power BI Price Range"  width="800" height="600" >
+        <img src='/analytics-engineer/myprojects/projects/images/fabric_project/pbi_price_range.png' stlye='display: block; margin: 0 auto' alt="Power BI Price Range"  width="800" height="600" >
     </li>
 </ol>
 </div><p><a href="#0">Back to Top</a></p>

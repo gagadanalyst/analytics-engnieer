@@ -2,12 +2,12 @@
 import PageLayout from "@/layouts/CommonPage.astro";
 ---
 
-<PageLayout title="Lead Scoring" showaside="false" back="/data-leader/projects">
+<PageLayout title="Lead Scoring" showaside="false" back="/analytics-engineer/projects">
   <div id="fileContent" style="all: revert"></div>
 </PageLayout>
 
 <script>
-  fetch("/data-leader/myprojects/leadscoring.html")
+  fetch("/analytics-engineer/myprojects/leadscoring.html")
     .then((response) => response.text())
     .then((text) => new DOMParser().parseFromString(text, "text/html"))
     .then((dom) => {

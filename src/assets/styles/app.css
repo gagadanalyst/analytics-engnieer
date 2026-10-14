@@ -1,13 +1,13 @@
 /* Font */
 @font-face {
   font-family: 'Satoshi';
-  src: url('/data-leader/fonts/Satoshi-Variable.ttf') format('truetype');
+  src: url('/analytics-engineer/fonts/Satoshi-Variable.ttf') format('truetype');
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Satoshi';
-  src: url('/data-leader/fonts/Satoshi-VariableItalic.ttf') format('truetype');
+  src: url('/analytics-engineer/fonts/Satoshi-VariableItalic.ttf') format('truetype');
   font-style: italic;
   font-display: swap;
 }

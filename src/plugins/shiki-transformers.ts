@@ -116,7 +116,7 @@ export const addCopyButton = (timeout?: number): ShikiTransformer => {
               },
               [
                 h('use', {
-                  href: '/data-leader/icons//code.svg#mingcute-clipboard-line'
+                  href: '/analytics-engineer/icons//code.svg#mingcute-clipboard-line'
                 })
               ]
             )
@@ -129,7 +129,7 @@ export const addCopyButton = (timeout?: number): ShikiTransformer => {
               },
               [
                 h('use', {
-                  href: '/data-leader/icons//code.svg#mingcute-file-check-line'
+                  href: '/analytics-engineer/icons//code.svg#mingcute-file-check-line'
                 })
               ]
             )

@@ -50,7 +50,7 @@ export const theme: ThemeUserConfig = {
       { title: 'Blog', link: '/analytics-engnieer/blog' },
 
       { title: 'Projects', link: '/analytics-engnieer/projects' },
-      //{ title: 'CV', link: '/data-leader/about' }
+      //{ title: 'CV', link: '/analytics-engineer/about' }
     ]
   },
 

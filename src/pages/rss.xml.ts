@@ -14,7 +14,7 @@ import { getBlogCollection, sortMDByDate } from 'astro-pure/server'
 
 // Get dynamic import of images as a map collection
 const imagesGlob = import.meta.glob<{ default: ImageMetadata }>(
-  '/data-leader/src/content/blog/**/*.{jpeg,jpg,png,gif,avif.webp}' // add more image formats if needed
+  '/analytics-engineer/src/content/blog/**/*.{jpeg,jpg,png,gif,avif.webp}' // add more image formats if needed
 )
 
 const renderContent = async (post: CollectionEntry<'blog'>, site: URL) => {
@@ -29,7 +29,7 @@ const renderContent = async (post: CollectionEntry<'blog'>, site: URL) => {
         if (node.url.startsWith('/images')) {
           node.url = `${site}${node.url.replace('/', '')}`
         } else {
-          const imagePathPrefix = `/data-leader/src/content/blog/${post.id}/${node.url.replace('./', '')}`
+          const imagePathPrefix = `/analytics-engineer/src/content/blog/${post.id}/${node.url.replace('./', '')}`
           const promise = imagesGlob[imagePathPrefix]?.().then(async (res) => {
             const imagePath = res?.default
             if (imagePath) {
@@ -61,7 +61,7 @@ const GET = async (context: AstroGlobal) => {
     // Basic configs
     trailingSlash: false,
     xmlns: { h: 'http://www.w3.org/TR/html4/' },
-    stylesheet: '/data-leader//scripts/pretty-feed-v3.xsl',
+    stylesheet: '/analytics-engineer//scripts/pretty-feed-v3.xsl',
 
     // Contents
     title: config.title,

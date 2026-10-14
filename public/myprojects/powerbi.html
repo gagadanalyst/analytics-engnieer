@@ -7607,7 +7607,7 @@ a.anchor-link {
 <li>Download SQL server localDB from <a href="https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/sql-server-express-localdb?view=sql-server-ver16">here</a></li>
 </ol>
 <p>       I downloaded the <strong>SQL Server 2022 Express edition</strong>, which downloaded the file <strong>SQL2022-SSEI-Expr.exe</strong>. When you open this file you get a screen like below</p>
-<p>       <center><img alt="SQL Server Local DB Download" height="600" src="/data-leader/myprojects/projects/images/AdventureWorld_Analysis_images/SQLServerLocalDBDownload.jpg" title="SQL Server Local DB Download" width="500"/></center></p>
+<p>       <center><img alt="SQL Server Local DB Download" height="600" src="/analytics-engineer/myprojects/projects/images/AdventureWorld_Analysis_images/SQLServerLocalDBDownload.jpg" title="SQL Server Local DB Download" width="500"/></center></p>
 <p>       Click on Download Media and Save the file SqlLocalDB.msi to your preferred location and then double click on it to install SQL Server LocalDB to you machine. It's basically a DBMS which supports T-SQL, which I used to load AdvenureWorks Database to SQL server. Once you install SQL server LocalDB, it install a utility <strong>sqllocaldb</strong> which we use to interact and manage SQL server LocalDB. For example to find the instance name, start and stop the instance.</p>
 <ol start="2">
 <li>You also need to install <strong>Microsoft® Command Line Utilities for SQL Server</strong>, which install <strong>sqlcmd</strong> command line utility to interact with SQL server. Download and install from <a href="https://www.microsoft.com/en-us/download/details.aspx?id=53591">here</a> This utilty helps to run SQL command against SQL Server LocalDB.</li>
@@ -7648,7 +7648,7 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p><a id="ldata"></a></p>
 <h1 id="6.-Load-Data-from-SQL-Server-to-Power-BI">6. Load Data from SQL Server to Power BI<a class="anchor-link" href="#6.-Load-Data-from-SQL-Server-to-Power-BI">¶</a></h1><p>       Click on <code>SQL Server Data</code> on the Home ribbon of Power BI Desktop. I was presented with a dialog box to fill connection details, which we know from Databse Restoration steps above.</p>
-<p>       <center><img alt="Connect to SQL Server PowerBI" height="600" src="/data-leader/myprojects/projects/images/AdventureWorld_Analysis_images/GetDataFromSQLServer.jpg" title="Connect to SQL Server PowerBI" width="600"/></center></p>
+<p>       <center><img alt="Connect to SQL Server PowerBI" height="600" src="/analytics-engineer/myprojects/projects/images/AdventureWorld_Analysis_images/GetDataFromSQLServer.jpg" title="Connect to SQL Server PowerBI" width="600"/></center></p>
 <p>       While working with any database ERD diagrams are really useful. I found the ERD diagram <a href="https://cursos.virtual.uniandes.edu.co/isis3301/wp-content/uploads/sites/208/2019/08/adventureworks.pdf">here</a>, studied it and decided to use below tables for my analysis</p>
 <table>
 <thead>
@@ -7715,8 +7715,8 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p><a id="dmodel"></a></p>
 <h1 id="7.-Transformations-and-The-Data-Model">7. Transformations and The Data Model<a class="anchor-link" href="#7.-Transformations-and-The-Data-Model">¶</a></h1><h3 id="1.-Transformations">1. Transformations<a class="anchor-link" href="#1.-Transformations">¶</a></h3><p>        1. Checked all tables for the distributions of the columns while trying to make sense of their usage in my analysis. There were null values in <code>ProductSubcategoryID</code> column of <code>product</code>, Checked the distibution of different values and decided to replace null values with most common value of 2.</p>
-<p>       <center><img alt="Null Values in Product Table" height="600" src="/data-leader/myprojects/projects/images/AdventureWorld_Analysis_images/NullValuesProductSubCatIDProductTable.jpg" title="Null Values in Product Table" width="600"/></center></p>
-<p>       <center><img alt="Null Values in Product Table Fix" height="600" src="/data-leader/myprojects/projects/images/AdventureWorld_Analysis_images/NullValuesProductSubCatIDProductTableFix.jpg" title="Null Values in Product Table Fix" width="600"/></center></p>
+<p>       <center><img alt="Null Values in Product Table" height="600" src="/analytics-engineer/myprojects/projects/images/AdventureWorld_Analysis_images/NullValuesProductSubCatIDProductTable.jpg" title="Null Values in Product Table" width="600"/></center></p>
+<p>       <center><img alt="Null Values in Product Table Fix" height="600" src="/analytics-engineer/myprojects/projects/images/AdventureWorld_Analysis_images/NullValuesProductSubCatIDProductTableFix.jpg" title="Null Values in Product Table Fix" width="600"/></center></p>
 <p>        2. Used below <strong>DAX</strong> code to create a Calendar Table in order to automatically generate Fiscal year segregations</p>
 <pre><code>Calendar =
 
@@ -7831,10 +7831,10 @@ WorkOrder'[Production.Product.StandardCost])
 
 WastePercent = calculate(SUM( 'Production WorkOrder'[ScrappedQty])/SUM('Production WorkOrder'[OrderQty]))
 </code></pre>
-<p>       <center><img alt="Transforms" height="600" src="/data-leader/myprojects/projects/images/AdventureWorld_Analysis_images/Transforms.jpg" title="Transforms" width="300"/></center></p>
+<p>       <center><img alt="Transforms" height="600" src="/analytics-engineer/myprojects/projects/images/AdventureWorld_Analysis_images/Transforms.jpg" title="Transforms" width="300"/></center></p>
 <h3 id="2.-Data-Model">2. Data Model<a class="anchor-link" href="#2.-Data-Model">¶</a></h3><p>I modelled the data using a star schema with <strong>Product</strong> table as the <em>fact table</em> and others as <em>Dimensions</em></p>
-<p>       <center><img alt="Data  Model" height="800" src="/data-leader/myprojects/projects/images/AdventureWorld_Analysis_images/DataModel.jpg" title="Data  Model" width="1080"/></center></p>
-<p>       <center><img alt="Table RelationShips" height="600" src="/data-leader/myprojects/projects/images/AdventureWorld_Analysis_images/RelationShips.jpg" title="Table RelationShips" width="800"/></center></p>
+<p>       <center><img alt="Data  Model" height="800" src="/analytics-engineer/myprojects/projects/images/AdventureWorld_Analysis_images/DataModel.jpg" title="Data  Model" width="1080"/></center></p>
+<p>       <center><img alt="Table RelationShips" height="600" src="/analytics-engineer/myprojects/projects/images/AdventureWorld_Analysis_images/RelationShips.jpg" title="Table RelationShips" width="800"/></center></p>
 <p><a href="#1">Back to Top</a></p>
 </div>
 </div>
@@ -7848,8 +7848,8 @@ WastePercent = calculate(SUM( 'Production WorkOrder'[ScrappedQty])/SUM('Producti
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p><a id="dash"></a></p>
 <h1 id="8.-Dashboard">8. Dashboard<a class="anchor-link" href="#8.-Dashboard">¶</a></h1><p>This dashboard analyses manufacturing and inventory operations, the dashboard is prepare to have a navigational interface. The main page includes leads to two areas namely <strong>Production Overview and Inventory Overview</strong>. Each then breakdown details and KPIs on their own page afterward.</p>
-<h4 id="Homepage">Homepage<a class="anchor-link" href="#Homepage">¶</a></h4><p>       <center><img alt="Dashboard Homepage" height="600" src="/data-leader/myprojects/projects/images/AdventureWorld_Analysis_images/Dashboard_Screenshots/HomePage.jpg" title="Dashboard Homepage" width="600"/></center></p>
-<p>       <center><img alt="Dashboard Homepage" height="600" src="/data-leader/myprojects/projects/images/AdventureWorld_Analysis_images/Dashboard_Screenshots/HomePage1.jpg" title="Dashboard Homepage" width="600"/></center></p>
+<h4 id="Homepage">Homepage<a class="anchor-link" href="#Homepage">¶</a></h4><p>       <center><img alt="Dashboard Homepage" height="600" src="/analytics-engineer/myprojects/projects/images/AdventureWorld_Analysis_images/Dashboard_Screenshots/HomePage.jpg" title="Dashboard Homepage" width="600"/></center></p>
+<p>       <center><img alt="Dashboard Homepage" height="600" src="/analytics-engineer/myprojects/projects/images/AdventureWorld_Analysis_images/Dashboard_Screenshots/HomePage1.jpg" title="Dashboard Homepage" width="600"/></center></p>
 <h4 id="Production-Overview">Production Overview<a class="anchor-link" href="#Production-Overview">¶</a></h4><p>       This page gives information about the manufacturing overview of the company
 . An assumption is made that the fiscal year starts on October 1st and ends on September 30th.<br/>
 All the charts and KPIs are described below: -</p>
@@ -7887,33 +7887,33 @@ All the charts and KPIs are described below: -</p>
 </tr>
 </tbody>
 </table>
-<p>       <center><img alt="Dashboard Production page" height="800" src="/data-leader/myprojects/projects/images/AdventureWorld_Analysis_images/Dashboard_Screenshots/Production.jpg" title="Dashboard Production page" width="800"/></center></p>
+<p>       <center><img alt="Dashboard Production page" height="800" src="/analytics-engineer/myprojects/projects/images/AdventureWorld_Analysis_images/Dashboard_Screenshots/Production.jpg" title="Dashboard Production page" width="800"/></center></p>
 <blockquote>
 <p><span style="color: green;"> Each KPI has a trend in the background showing how the KPI has performed during that specific fiscal year.</span></p>
 </blockquote>
 <h6 id="Charts-on-the-page">Charts on the page<a class="anchor-link" href="#Charts-on-the-page">¶</a></h6><ol>
 <li>Cumulative Multiline chart showing Production totals helps compare the fiscal year production trends and helps remove bottlenecks in manufacturing.</li>
 </ol>
-<p>       <center><img alt="Cumulative Monthly totals by fiscal year" height="800" src="/data-leader/myprojects/projects/images/AdventureWorld_Analysis_images/Dashboard_Screenshots/Cumulative_Monthly_totals_by_fiscal_year.jpg" title="Cumulative Monthly totals by fiscal year" width="800"/></center></p>
+<p>       <center><img alt="Cumulative Monthly totals by fiscal year" height="800" src="/analytics-engineer/myprojects/projects/images/AdventureWorld_Analysis_images/Dashboard_Screenshots/Cumulative_Monthly_totals_by_fiscal_year.jpg" title="Cumulative Monthly totals by fiscal year" width="800"/></center></p>
 <ol start="2">
 <li>Donut Chart showing Actual cost distribution over different parts of the assembly line. Helps determine which parts cost more and where improvement is needed so that production costs are reduced.</li>
 </ol>
-<p>       <center><img alt="Actual cost distribution over different parts of the assembly line" height="800" src="/data-leader/myprojects/projects/images/AdventureWorld_Analysis_images/Dashboard_Screenshots/donut.jpg" title="Actual cost distribution over different parts of the assembly line" width="800"/></center></p>
+<p>       <center><img alt="Actual cost distribution over different parts of the assembly line" height="800" src="/analytics-engineer/myprojects/projects/images/AdventureWorld_Analysis_images/Dashboard_Screenshots/donut.jpg" title="Actual cost distribution over different parts of the assembly line" width="800"/></center></p>
 <ol start="3">
 <li>Waste cost by year line chart. A simple chart showing how much money the company is wasting on discarded products and what is the trend</li>
 </ol>
-<p>       <center><img alt="Waste Cost by Year" height="800" src="/data-leader/myprojects/projects/images/AdventureWorld_Analysis_images/Dashboard_Screenshots/WasteCostYear.jpg" title="Waste Cost by Year" width="800"/></center></p>
+<p>       <center><img alt="Waste Cost by Year" height="800" src="/analytics-engineer/myprojects/projects/images/AdventureWorld_Analysis_images/Dashboard_Screenshots/WasteCostYear.jpg" title="Waste Cost by Year" width="800"/></center></p>
 <h3 id="Category-Analysis">Category Analysis<a class="anchor-link" href="#Category-Analysis">¶</a></h3><p>You can navigate to the <strong>PRODUCTION CATEGORY ANALYSIS</strong> page by clicking on the <strong>CATEGORY ANALYSIS</strong> button on the top of the page. Product Category Page will help identify specific issues in the manufacturing system.</p>
 <p><strong>Pareto Charts</strong></p>
 <p>A Pareto chart is a Bar graph, the length of the chart represents frequency or cost, the longest bars are arranged on the left and the shortest to the right which amplifies the importance of the category with the highest bar. A line overlaps over the bar graph showing the percent contribution of the specific bar chart towards the total and the line accumulates the percent showing how many categories are important and consume most of the process. There are 2 Pareto Charts on this page, first is for the components required to manufacture a bike showing where most of the production is occupied and the other one is for the finished bike products showing categories of bikes produced.</p>
-<p>       <center><img alt="Pareto Chart 1" height="800" src="/data-leader/myprojects/projects/images/AdventureWorld_Analysis_images/Dashboard_Screenshots/pareto1.jpg" title="Pareto Chart 1" width="800"/></center></p>
-<p>       <center><img alt="Pareto Chart 2" height="800" src="/data-leader/myprojects/projects/images/AdventureWorld_Analysis_images/Dashboard_Screenshots/pareto2.jpg" title="Pareto Chart 2" width="800"/></center></p>
+<p>       <center><img alt="Pareto Chart 1" height="800" src="/analytics-engineer/myprojects/projects/images/AdventureWorld_Analysis_images/Dashboard_Screenshots/pareto1.jpg" title="Pareto Chart 1" width="800"/></center></p>
+<p>       <center><img alt="Pareto Chart 2" height="800" src="/analytics-engineer/myprojects/projects/images/AdventureWorld_Analysis_images/Dashboard_Screenshots/pareto2.jpg" title="Pareto Chart 2" width="800"/></center></p>
 <p><strong>Waste Cost - Product Matrix Visual</strong></p>
 <p>The Matrix visual shows the reason where exactly the waste is costing money to the company and due to which reasons. The first column provides the reason for waste, while the other two columns are divided into two categories Bikes (Actual bikes wasted in production) and Components (Components of bikes wasted in production). The Cost is conditionally formatted showing which portion is costing more and the reason for it. There are subtotals on rows and columns and grand total for total waste money.</p>
-<p>       <center><img alt="Matrix Chart" height="800" src="/data-leader/myprojects/projects/images/AdventureWorld_Analysis_images/Dashboard_Screenshots/matrix.jpg" title="Matrix Chart" width="800"/></center></p>
+<p>       <center><img alt="Matrix Chart" height="800" src="/analytics-engineer/myprojects/projects/images/AdventureWorld_Analysis_images/Dashboard_Screenshots/matrix.jpg" title="Matrix Chart" width="800"/></center></p>
 <p><strong>Bar chart</strong></p>
 <p>A simple bar chart showing how many Product categories are produced on time.</p>
-<p>       <center><img alt="Bar Chart" height="800" src="/data-leader/myprojects/projects/images/AdventureWorld_Analysis_images/Dashboard_Screenshots/bar.jpg" title="Bar Chart" width="800"/></center></p>
+<p>       <center><img alt="Bar Chart" height="800" src="/analytics-engineer/myprojects/projects/images/AdventureWorld_Analysis_images/Dashboard_Screenshots/bar.jpg" title="Bar Chart" width="800"/></center></p>
 <h4 id="Inventory-Overview">Inventory Overview<a class="anchor-link" href="#Inventory-Overview">¶</a></h4><p>Another major component of the dashboard is the Inventory overview, although there is no data regarding the distribution supply chain in the database this analysis is done assuming the location is represents the  distribution supply chain.</p>
 <table>
 <thead>
@@ -7937,15 +7937,15 @@ All the charts and KPIs are described below: -</p>
 </tr>
 </tbody>
 </table>
-<p>       <center><img alt="Inventory Chart 1" height="800" src="/data-leader/myprojects/projects/images/AdventureWorld_Analysis_images/Dashboard_Screenshots/Inventory.jpg" title="Inventory Chart 1" width="800"/></center></p>
-<p>       <center><img alt="Inventory Chart 2" height="800" src="/data-leader/myprojects/projects/images/AdventureWorld_Analysis_images/Dashboard_Screenshots/Inventory1.jpg" title="Inventory Chart 2" width="800"/></center></p>
+<p>       <center><img alt="Inventory Chart 1" height="800" src="/analytics-engineer/myprojects/projects/images/AdventureWorld_Analysis_images/Dashboard_Screenshots/Inventory.jpg" title="Inventory Chart 1" width="800"/></center></p>
+<p>       <center><img alt="Inventory Chart 2" height="800" src="/analytics-engineer/myprojects/projects/images/AdventureWorld_Analysis_images/Dashboard_Screenshots/Inventory1.jpg" title="Inventory Chart 2" width="800"/></center></p>
 <p><strong>Area Charts</strong></p>
 <p>Area charts show how much Inventory quantity and Inventory value does the company hold by the Assembly location category are shown in the area chart. This shows which part of the manufacturing is holding most of the money and if the company is making the right choices of investing in those parts. I added 2 buttons on top of the chart(s) so the end-user can choose if he/she wants to view the quantity or value on the chart.</p>
-<p>       <center><img alt="Area Chart 1" height="800" src="/data-leader/myprojects/projects/images/AdventureWorld_Analysis_images/Dashboard_Screenshots/area1.jpg" title="Area Chart 1" width="800"/></center></p>
-<p>       <center><img alt="Area Chart 2" height="800" src="/data-leader/myprojects/projects/images/AdventureWorld_Analysis_images/Dashboard_Screenshots/area2.jpg" title="Area Chart 2" width="800"/></center></p>
+<p>       <center><img alt="Area Chart 1" height="800" src="/analytics-engineer/myprojects/projects/images/AdventureWorld_Analysis_images/Dashboard_Screenshots/area1.jpg" title="Area Chart 1" width="800"/></center></p>
+<p>       <center><img alt="Area Chart 2" height="800" src="/analytics-engineer/myprojects/projects/images/AdventureWorld_Analysis_images/Dashboard_Screenshots/area2.jpg" title="Area Chart 2" width="800"/></center></p>
 <p><strong>Inventory Turnover Multiline chart</strong></p>
 <p>Comparing inventory turnover on different fiscal years can show important data. The chart show the trends in previous years of how the inventory has been used and can help plan the production process.</p>
-<p>       <center><img alt="Line Chart" height="800" src="/data-leader/myprojects/projects/images/AdventureWorld_Analysis_images/Dashboard_Screenshots/line.jpg" title="Line Chart" width="800"/></center></p>
+<p>       <center><img alt="Line Chart" height="800" src="/analytics-engineer/myprojects/projects/images/AdventureWorld_Analysis_images/Dashboard_Screenshots/line.jpg" title="Line Chart" width="800"/></center></p>
 <p><a href="#1">Back to Top</a></p>
 </div>
 </div>

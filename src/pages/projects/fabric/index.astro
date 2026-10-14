@@ -5,13 +5,13 @@ import PageLayout from "@/layouts/CommonPage.astro";
 <PageLayout
   title="Microsoft Fabric"
   showaside="false"
-  back="/data-leader/projects"
+  back="/analytics-engineer/projects"
 >
   <div id="fileContent" style="all: revert"></div>
 </PageLayout>
 
 <script>
-  fetch("/data-leader/myprojects/fabric.html")
+  fetch("/analytics-engineer/myprojects/fabric.html")
     .then((response) => response.text())
     .then((text) => new DOMParser().parseFromString(text, "text/html"))
     .then((dom) => {

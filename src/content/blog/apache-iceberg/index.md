@@ -82,7 +82,7 @@ Iceberg supports multiple **production-ready catalogs**, including Hive, AWS Glu
 An iceberg table is defined as a list of data files. Iceberg then use layers of metadata defined in files to optimize operations on the table. There are three layers to any iceberg table: **Data, Metadata and the Catalog**, as can be seen from the below diagram from the [official specification](https://iceberg.apache.org/spec/#overview) 
 
 <figure style="display: block; margin-left: 10%;margin-right;width: 80%;">
-  <img src="/data-leader/blog/apache-iceberg/images/iceberg-arch.png" alt="Apache Iceberg Architecture"  class="zoomable">
+  <img src="/analytics-engineer/blog/apache-iceberg/images/iceberg-arch.png" alt="Apache Iceberg Architecture"  class="zoomable">
   <figcaption style="margin-left: 35%">Apache Iceberg<sup>TM</sup> Architecture.</figcaption>
 </figure>
 
@@ -104,14 +104,14 @@ structure provides large performance gains over row-based file formats like [Apa
     
 - *Positional* delete files list exact *position* of the rows to be removed from the table.
   <figure>
-      <img src="/data-leader/blog/apache-iceberg/images/positional-delete-file.png" alt="Positional Delete File Example"  class="zoomable">
+      <img src="/analytics-engineer/blog/apache-iceberg/images/positional-delete-file.png" alt="Positional Delete File Example"  class="zoomable">
       <figcaption style="margin-left: 35%">Positional Delete File Example.</figcaption>
     </figure>
 
   
 - *Equality* delete files list value of one or more column/field  of the row.
   <figure>
-      <img src="/data-leader/blog/apache-iceberg/images/equality-delete-file.png" alt="Equality Delete File Example"  class="zoomable">
+      <img src="/analytics-engineer/blog/apache-iceberg/images/equality-delete-file.png" alt="Equality Delete File Example"  class="zoomable">
       <figcaption style="margin-left: 35%">Equality Delete File Example.</figcaption>
     </figure>
 
@@ -141,7 +141,7 @@ When you execute a CREATE TABLE statement in Apache Iceberg<sup>TM</sup>, the pr
 The annotated diagram below illustrates the relationship between the components during the initial creation phase.
 
 <div>
-  <img src="/data-leader/blog/apache-iceberg/images/create_table.png" class="zoomable" alt="Apache Iceberg Create Table no Snapshot and Metadata" />
+  <img src="/analytics-engineer/blog/apache-iceberg/images/create_table.png" class="zoomable" alt="Apache Iceberg Create Table no Snapshot and Metadata" />
 </div>
 
 ### INSERT INTO
@@ -150,23 +150,23 @@ When you execute an INSERT statement, Iceberg transitions from a "definition onl
 
 
 <div>
-  <img src="/data-leader/blog/apache-iceberg/images/insert_into.png" class="zoomable" alt="Apache Iceberg INSERT INTO TABLE"/>
+  <img src="/analytics-engineer/blog/apache-iceberg/images/insert_into.png" class="zoomable" alt="Apache Iceberg INSERT INTO TABLE"/>
 </div>
 
 ### MERGE INTO
 <div>
-  <img src="/data-leader/blog/apache-iceberg/images/update_merge.png" class="zoomable" alt="Apache Iceberg MERGE INTO TABLE"/>
+  <img src="/analytics-engineer/blog/apache-iceberg/images/update_merge.png" class="zoomable" alt="Apache Iceberg MERGE INTO TABLE"/>
 </div>
 
 
 ### SELECT
 <div>
-  <img src="/data-leader/blog/apache-iceberg/images/select.png" class="zoomable" alt="Apache Iceberg SELECT FROM TABLE"/>
+  <img src="/analytics-engineer/blog/apache-iceberg/images/select.png" class="zoomable" alt="Apache Iceberg SELECT FROM TABLE"/>
 </div>
 
 ### TIME TRAVEL
 <div>
-  <img src="/data-leader/blog/apache-iceberg/images/time_travel.png" class="zoomable" alt="Apache Iceberg TIME TRAVEL" />
+  <img src="/analytics-engineer/blog/apache-iceberg/images/time_travel.png" class="zoomable" alt="Apache Iceberg TIME TRAVEL" />
 </div>
 
 ---
@@ -267,12 +267,12 @@ USING ICEBERG
 As I mentioned in the read and write query section, the create table statement only creates a **metadata file** and **no snapshot,manifest list, manifest file and data files are created** as no data is inserted into the table, just a reference from table name to metadata file location is inserted in the catalog as can be seen from below images from the catalog
 
   <figure>
-    <img src="/data-leader/blog/apache-iceberg/images/hands_on/create/metadata_loc.png" alt="Apache Iceberg Create Table metadata location" class="zoomable">
+    <img src="/analytics-engineer/blog/apache-iceberg/images/hands_on/create/metadata_loc.png" alt="Apache Iceberg Create Table metadata location" class="zoomable">
     <figcaption style="margin-left: 35%;font-weight: bold;">Apache Iceberg<sup>TM</sup> Create Table metadata location.</figcaption>
   </figure>
 
   <figure class="zoomable">
-    <img src="/data-leader/blog/apache-iceberg/images/hands_on/create/no_snapshot_no_metadata.png" alt="Apache Iceberg Create Table no Snapshot and Metadata"  class="zoomable">
+    <img src="/analytics-engineer/blog/apache-iceberg/images/hands_on/create/no_snapshot_no_metadata.png" alt="Apache Iceberg Create Table no Snapshot and Metadata"  class="zoomable">
     <figcaption style="margin-left: 25%;font-weight: bold;">Apache Iceberg<sup>TM</sup> Create Table no Snapshot and Metadata.</figcaption>
   </figure>
 
@@ -375,12 +375,12 @@ This is what happens
 - If you open the **catalog** which is stored in **spark.db**  **sqlite** database with **DBeaver** you would see that the table name is pointing to the metadata file name and  location.
 
   <figure>
-    <img src="/data-leader/blog/apache-iceberg/images/hands_on/insert/metadata_loc.png" alt="Apache Iceberg INSERT INTO TABLE metadata location"  class="zoomable">
+    <img src="/analytics-engineer/blog/apache-iceberg/images/hands_on/insert/metadata_loc.png" alt="Apache Iceberg INSERT INTO TABLE metadata location"  class="zoomable">
     <figcaption  style="margin-left: 25%;font-weight: bold;">Apache Iceberg<sup>TM</sup> INSERT INTO TABLE metadata location.</figcaption>
   </figure>
 - Then if you open the metadata json file with any json viewer, you would find that it lists the manifest list file name and location
   <figure>
-    <img src="/data-leader/blog/apache-iceberg/images/hands_on/insert/manifest_list_loc.png" alt="Apache Iceberg INSERT INTO TABLE manifest list location"  class="zoomable">
+    <img src="/analytics-engineer/blog/apache-iceberg/images/hands_on/insert/manifest_list_loc.png" alt="Apache Iceberg INSERT INTO TABLE manifest list location"  class="zoomable">
     <figcaption style="margin-left: 25%;font-weight: bold;">Apache Iceberg<sup>TM</sup> INSERT INTO TABLE manifest list location.</figcaption>
   </figure>
 <details>
@@ -493,17 +493,17 @@ This is what happens
 
 - Now if you open the manifest list avro file with the tool I shared before or any avro viewer you would find out the name and location of the manifest file(s)
   <figure>
-    <img src="/data-leader/blog/apache-iceberg/images/hands_on/insert/manifest_loc.png" alt="Apache Iceberg INSERT INTO TABLE manifest location"  class="zoomable" style="border: 1px solid black;">
+    <img src="/analytics-engineer/blog/apache-iceberg/images/hands_on/insert/manifest_loc.png" alt="Apache Iceberg INSERT INTO TABLE manifest location"  class="zoomable" style="border: 1px solid black;">
     <figcaption style="margin-left: 25%;font-weight: bold;">Apache Iceberg<sup>TM</sup> INSERT INTO TABLE manifest location.</figcaption>
   </figure>
 - The manifest avro file above contains the location of the data file(s) which stores the data
   <figure>
-    <img src="/data-leader/blog/apache-iceberg/images/hands_on/insert/data_file_loc.png" alt="Apache Iceberg INSERT INTO TABLE data file location"  class="zoomable" style="border: 1px solid black;">
+    <img src="/analytics-engineer/blog/apache-iceberg/images/hands_on/insert/data_file_loc.png" alt="Apache Iceberg INSERT INTO TABLE data file location"  class="zoomable" style="border: 1px solid black;">
     <figcaption style="margin-left: 25%;font-weight: bold;">Apache Iceberg<sup>TM</sup> INSERT INTO TABLE data file location.</figcaption>
   </figure>
 - If you view the parquet data file, you can see the data we inserted.
   <figure>
-    <img src="/data-leader/blog/apache-iceberg/images/hands_on/insert/data_file_content.png" alt="Apache Iceberg INSERT INTO TABLE data file contents"  class="zoomable" style="border: 1px solid black;">
+    <img src="/analytics-engineer/blog/apache-iceberg/images/hands_on/insert/data_file_content.png" alt="Apache Iceberg INSERT INTO TABLE data file contents"  class="zoomable" style="border: 1px solid black;">
     <figcaption style="margin-left: 25%;font-weight: bold;">Apache Iceberg<sup>TM</sup> INSERT INTO TABLE data file contents.</figcaption>
   </figure>
 
@@ -571,13 +571,13 @@ WHEN NOT MATCHED THEN
 ```
 As you can see below now that the table is pointing to the updated metadata file
   <figure>
-    <img src="/data-leader/blog/apache-iceberg/images/hands_on/merge/metadata_loc.png" alt="Apache Iceberg MERGE INTO TABLE metadata location"  class="zoomable">
+    <img src="/analytics-engineer/blog/apache-iceberg/images/hands_on/merge/metadata_loc.png" alt="Apache Iceberg MERGE INTO TABLE metadata location"  class="zoomable">
     <figcaption  style="margin-left: 25%;font-weight: bold;">Apache Iceberg<sup>TM</sup> MERGE INTO TABLE metadata location.</figcaption>
   </figure>
 
 - Then if you open the metadata json file with any json viewer, you would find that it lists the manifest list file name and location
   <figure>
-    <img src="/data-leader/blog/apache-iceberg/images/hands_on/merge/manifest_list_loc.png" alt="Apache Iceberg MERGE INTO TABLE manifest list location"  class="zoomable">
+    <img src="/analytics-engineer/blog/apache-iceberg/images/hands_on/merge/manifest_list_loc.png" alt="Apache Iceberg MERGE INTO TABLE manifest list location"  class="zoomable">
     <figcaption style="margin-left: 25%;font-weight: bold;">Apache Iceberg<sup>TM</sup> MERGE INTO TABLE manifest list location.</figcaption>
   </figure>
 
@@ -725,16 +725,16 @@ As you can see below now that the table is pointing to the updated metadata file
 
 - Now if you open the manifest list avro file with the tool I shared before or any avro viewer you would find out the name and location of the manifest file(s) and since the merge statement had a *DELETE* clause, Iceberg will create a delete file, as is evident from the **deleted_files_count** field value of **1** as shown below
   <figure>
-    <img src="/data-leader/blog/apache-iceberg/images/hands_on/merge/manifest_loc_shows_delete_file.png" alt="Apache Iceberg MERGE INTO TABLE manifest location"  class="zoomable" style="border: 1px solid black;">
+    <img src="/analytics-engineer/blog/apache-iceberg/images/hands_on/merge/manifest_loc_shows_delete_file.png" alt="Apache Iceberg MERGE INTO TABLE manifest location"  class="zoomable" style="border: 1px solid black;">
     <figcaption style="margin-left: 25%;font-weight: bold;">Apache Iceberg<sup>TM</sup> MERGE INTO TABLE manifest location.</figcaption>
   </figure>
 - The manifest avro files above contains the location of the data file(s) which stores the data as before
   <figure>
-    <img src="/data-leader/blog/apache-iceberg/images/hands_on/merge/data_file_loc1.png" alt="Apache Iceberg MERGE INTO TABLE data file location1"  class="zoomable" style="border: 1px solid black;">
+    <img src="/analytics-engineer/blog/apache-iceberg/images/hands_on/merge/data_file_loc1.png" alt="Apache Iceberg MERGE INTO TABLE data file location1"  class="zoomable" style="border: 1px solid black;">
     <figcaption style="margin-left: 25%;font-weight: bold;">Apache Iceberg<sup>TM</sup> MERGE INTO TABLE data file location2.</figcaption>
   </figure>
   <figure>
-    <img src="/data-leader/blog/apache-iceberg/images/hands_on/merge/data_file_loc2.png" alt="Apache Iceberg MERGE INTO TABLE data file location2"  class="zoomable" style="border: 1px solid black;">
+    <img src="/analytics-engineer/blog/apache-iceberg/images/hands_on/merge/data_file_loc2.png" alt="Apache Iceberg MERGE INTO TABLE data file location2"  class="zoomable" style="border: 1px solid black;">
     <figcaption style="margin-left: 25%;font-weight: bold;">Apache Iceberg<sup>TM</sup> MERGE INTO TABLE data file location2.</figcaption>
   </figure>
 
@@ -746,7 +746,7 @@ As you can see below now that the table is pointing to the updated metadata file
     spark.sql("select * from local_catalog.db.customers").collect()
   ```
   <figure>
-    <img src="/data-leader/blog/apache-iceberg/images/hands_on/select/select_after_merge.png" alt="Apache Iceberg SELECT FROM TABLE result"  class="zoomable" style="border: 1px solid black;">
+    <img src="/analytics-engineer/blog/apache-iceberg/images/hands_on/select/select_after_merge.png" alt="Apache Iceberg SELECT FROM TABLE result"  class="zoomable" style="border: 1px solid black;">
     <figcaption style="margin-left: 25%;font-weight: bold;">Apache Iceberg<sup>TM</sup> SELECT FROM TABLE result.</figcaption>
   </figure>
 
@@ -760,7 +760,7 @@ As you can see below now that the table is pointing to the updated metadata file
   spark.sql("""SELECT * from local_catalog.db.customers VERSION AS OF 6604931699318221575""").collect()
   ```
   <figure>
-    <img src="/data-leader/blog/apache-iceberg/images/hands_on/time_travel/tt.png" alt="Apache Iceberg TIME TRAVEL"  class="zoomable" style="border: 1px solid black;">
+    <img src="/analytics-engineer/blog/apache-iceberg/images/hands_on/time_travel/tt.png" alt="Apache Iceberg TIME TRAVEL"  class="zoomable" style="border: 1px solid black;">
     <figcaption style="margin-left: 25%;font-weight: bold;">Apache Iceberg<sup>TM</sup> TIME TRAVEL.</figcaption>
   </figure>
 

@@ -5,13 +5,13 @@ import PageLayout from "@/layouts/CommonPage.astro";
 <PageLayout
   title="Diabetes Classification"
   showaside="false"
-  back="/data-leader/projects"
+  back="/analytics-engineer/projects"
 >
   <div id="fileContent" style="all: revert"></div>
 </PageLayout>
 
 <script>
-  fetch("/data-leader//myprojects/diabetes.html")
+  fetch("/analytics-engineer//myprojects/diabetes.html")
     .then((response) => response.text())
     .then((text) => new DOMParser().parseFromString(text, "text/html"))
     .then((dom) => {
